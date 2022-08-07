@@ -1,36 +1,63 @@
-console.log('helloWolrd')
 
+//Variables Globales//
 const items = document.getElementsByClassName('containSlide');
+let paragraphe = document.getElementById('containBtn__comptSlide');
 const nbItems = items.length;
-const suivant = document.getElementsByClassName('slideSuivant');
-const precedent = document.getElementsByClassName('slidePrecedent');
 let count = 0 ;
+let compt = 1;
 
-suivant[0].addEventListener('click',() =>
+//Fonctions//
+const slideSuivant = () =>
 {
+    const suivant = document.getElementsByClassName('slideSuivant');
 
-    items[count].classList.remove('containSlide--active');
-
-    if(count < nbItems - 1)
+    suivant[0].addEventListener('click',() =>
     {
-        count++;
-        console.log(count);
-    }
-    else
-    {
-        count=0;
-        console.log(count);   
-    }
-     
-    items[count].classList.add('containSlide--active');
 
-});
+        items[count].classList.remove('containSlide--active');
 
+        if(count < nbItems - 1)
+        {
+            count++;
+            compt++;  
+        }
+        else
+        {
+            count=0;
+            compt = 1;     
+        }
+        
+        items[count].classList.add('containSlide--active');
+        paragraphe.innerHTML = `${compt}`
 
-precedent[0].addEventListener('click',() =>
+    });
+}
+const slidePrecedent = () =>
 {
-    console.log('précedent')
-});
+    const precedent = document.getElementsByClassName('slidePrecedent');
 
+    precedent[0].addEventListener('click',() =>
+    {
+        console.log('précedent')
 
+        items[count].classList.remove('containSlide--active');
+        if(count> 0)
+        {
+            count --;
+            compt --;
+        }
+        else
+        {
+            count = nbItems - 1;
+            compt = nbItems;
+        }
 
+        items[count].classList.add('containSlide--active');
+        paragraphe.innerHTML = `${compt}`
+    });
+}
+
+//Execution//
+paragraphe.innerHTML = `1`;
+slideSuivant();
+slidePrecedent();

@@ -1,1 +1,50 @@
-$border: 1px solid black;
+$border: 1px solid #262626;
+$widthBoitesSlide : 50vh;
+@mixin typographie
+{
+    color: #262626;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+@mixin typographieCompt
+{
+    color:  #262626;
+    font-size: 5vh ;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+
+
+
+$grisFond : #262626;
+$noirOpa : rgba(0, 0, 0, 0.832);
+$grisMat: #333;
+$saumon: rgb(187, 76, 76);
+$pink: #ffa7c2 ;
+$red: #590212;
+$red2: #8C041D;
+$red3: #7e1333b8;
+$bleuNuit : #011c37;
+$violetForm: #6300a0;
+$violet2: #483D8B;
+$beigeDark: antiquewhite;
+$bleuClair: #cae4e7;
+$blanchi: rgb(237, 246, 247);
+$vertChimie :#15DEA5 ;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
